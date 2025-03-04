@@ -1,3 +1,4 @@
 #!/bin/bash
 echo "Setting up environment..."
 export TEST_ENV_VAR=value_from_pre_command_hook
+echo "$TEST_ENV_VAR"
