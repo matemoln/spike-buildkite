@@ -1,3 +1,4 @@
 ---
 steps:
   - command: "ls -la"
+  - command: "echo 'Hello, world!'"
