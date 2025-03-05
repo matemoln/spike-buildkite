@@ -1,11 +1,12 @@
 ---
+env:
+  HELLO_TEXT: "Hello, pipeline!"
+
 steps:
-  - command: "ls -la"
-  - command: "ls -la"
-  - command: "ls -la"
-  - command: "ls -la"
-  - command: "ls -la"
-  - command: "ls -la"
-  - command: "ls -la"
-  - command: "ls -la"
-  - command: "echo 'Hello, world!'"
+  - command: "./greetings.sh $$HELLO_TEXT"
+    env:
+      HELLO_TEXT: "Hello, step!"
+  - command: "./greetings.sh $$HELLO_TEXT"
+  - commands:
+      - "unset HELLO_TEXT"
+      - "./greetings.sh $$HELLO_TEXT"
